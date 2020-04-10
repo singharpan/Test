@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      State Handling with State and Props
+      State and Props
     </title>
 
     <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
@@ -18,11 +18,11 @@
       class Main extends React.Component {
         state = {
           counter: [
-            { id: 1, value: 2 },
-            { id: 2, value: 1 },
-            { id: 3, value: 3 },
-            { id: 4, value: 5 },
-            { id: 5, value: 6 },
+            { id: 1, value: 0 },
+            { id: 2, value: 0 },
+            { id: 3, value: 0 },
+            { id: 4, value: 0 },
+            { id: 5, value: 0 },
           ],
         };
 
@@ -33,6 +33,7 @@
           this.setState({
             counter: newCounter,
           });
+          console.log(this.state.counter);
         };
         //Here State Will be "Update" on Click Event...A "id" would be passed to reference "which state" to Update
         render() {
@@ -56,6 +57,7 @@
         state = {
           value: this.props.value,
         };
+        console.log(this.state.value);
         addItem = () => {
           this.setState({
             value: this.state.value + 1,
