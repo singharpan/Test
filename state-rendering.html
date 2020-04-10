@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>
-      State and Props
+     React State and Props
     </title>
 
     <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
@@ -17,7 +17,7 @@
       
       class Main extends React.Component {
         state = {
-          counter: [
+          counters: [
             { id: 1, value: 0 },
             { id: 2, value: 0 },
             { id: 3, value: 0 },
@@ -27,20 +27,20 @@
         };
 
         handleDelete = (counterid) => {
-          const newCounter = this.state.counter.filter(
+          const newCounter = this.state.counters.filter(
             (c) => c.id !== counterid
           );
           this.setState({
-            counter: newCounter,
+            counters: newCounter,
           });
-          console.log(this.state.counter);
+          console.log(this.state.counters);
         };
         //Here State Will be "Update" on Click Event...A "id" would be passed to reference "which state" to Update
         render() {
           return (
             <div>
               <h2>This a state transfer</h2>
-              {this.state.counter.map((counters) => (
+              {this.state.counters.map((counters) => (
                 <Child
                   key={counters.id}
                   id={counters.id}
